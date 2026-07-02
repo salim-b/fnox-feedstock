@@ -13,10 +13,10 @@ build:
   number: 1
   script:
     env:
+      AWS_LC_SYS_CMAKE_BUILDER: "1" # force CMake builder for `aws-lc-sys` native C code, required to make cross-compilation work
       CARGO_PROFILE_RELEASE_LTO: fat
       CARGO_PROFILE_RELEASE_STRIP: symbols
-      # force CMake builder for `aws-lc-sys` native C code, required to make cross-compilation work
-      AWS_LC_SYS_CMAKE_BUILDER: "1"
+      PKG_CONFIG_ALLOW_CROSS: "1" # ignore `pkg-config` crate's host-target mismatch safeguard
     content:
       # NOTE: we have to set LIBCLANG_PATH for bindgen to find libclang (used by aws-lc-rs)
       # cf. https://github.com/conda-forge/clangdev-feedstock/issues/373 & https://github.com/rust-lang/rust-bindgen/issues/918
