@@ -52,6 +52,7 @@ requirements:
   build:
     - ${{ stdlib('c') }}
     - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
     - ${{ compiler('rust') }}
     - cargo-auditable
     - cargo-bundle-licenses
