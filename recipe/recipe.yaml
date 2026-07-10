@@ -1,5 +1,5 @@
 context:
-  version: "1.29.0"
+  version: "1.30.0"
 
 package:
   name: fnox
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/jdx/fnox/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: f25393fc2769f7916698d858b315244db34cc388c582399257f61cf4ebdd0981
+  sha256: d1992d1b2d2042794dc1763f9d24d286d3a42f8cf190607d61cd6df6ca619fc9
 
 build:
-  number: 1
+  number: 0
   script:
     env:
       AWS_LC_SYS_CMAKE_BUILDER: ${{ "1" if host_platform == "win-arm64" else "0" }} # force CMake builder for `aws-lc-sys` native C/C++ code on `win-arm64`
