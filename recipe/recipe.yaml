@@ -74,10 +74,8 @@ requirements:
 
 tests:
   - script:
-      - if: build_platform == host_platform
-        then:
-          - fnox --help
-          - fnox --version
+      - fnox --help
+      - fnox --version
   - package_contents:
       bin:
         - fnox
