@@ -10,7 +10,7 @@ source:
   sha256: fcb87bc1b1b6bd7b1ce54d9c37f2278e39cc36abf3c2fa98fd5fd0b2081ab122
 
 build:
-  number: 0
+  number: 1
   script:
     env:
       AWS_LC_SYS_CMAKE_BUILDER: ${{ "1" if win else "0" }} # force CMake builder for `aws-lc-sys` native C/C++ code on Windows
@@ -65,7 +65,6 @@ requirements:
     - perl
     - pkg-config
   host:
-    - usage
     - if: linux
       then:
         - libudev
